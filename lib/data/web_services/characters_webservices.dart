@@ -16,8 +16,12 @@ class CharacterWebServices {
     try{
       Response response = await dio.get("character");
       // return response.data["results"];
+      print('------------------------------------------------------------------------------------------------------------');
       print(response.data.toString());
-      return response.data;
+      print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+      return response.data["results"];
+
+      // return response.data;
     }
     catch(e){
       print(e.toString());

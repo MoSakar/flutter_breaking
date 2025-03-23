@@ -5,9 +5,12 @@ class CharacterRepository {
 final CharacterWebServices characterWebServices ;
 
   CharacterRepository(this.characterWebServices);
-  Future <List<dynamic>> getCharacters() async{
+  Future <List<Character>> getCharacters() async{
     final characters = await characterWebServices.getCharacters();
-    return characters.map((character)=>Character.fromJson(character)).toList();
+    print('1111111111111111111111111111111111111111111111111111111111111111');
+    //print(characters.toString());
+    print(characters.map((character)=>Character.fromJson(character as Map<String,dynamic>)).toList());
+    return characters.map((character)=>Character.fromJson(character as Map<String,dynamic>)).toList();
 
   }
   

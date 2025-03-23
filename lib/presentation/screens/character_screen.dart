@@ -55,7 +55,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
     physics: NeverScrollableScrollPhysics(),
     padding: EdgeInsets.zero,
     itemBuilder: (ctx, index){
-      return CharacterItem();
+      return CharacterItem(character: allCharacters![index],);
     },);
   }
 

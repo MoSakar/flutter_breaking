@@ -7,8 +7,8 @@ class Character {
   late String species;
   late String type;
   late String gender;
-  late Map<String, dynamic> origin;
-  late Map<String, dynamic> location;
+  // late Map<String, dynamic> origin;
+  // late Map<String, dynamic> location;
   late String image;
   late List<String> episode;
   late String url;
@@ -35,11 +35,24 @@ class Character {
     species = json['species'];
     type = json['type'];
     gender = json['gender'];
-    origin = json['origin'];
-    location = json['location'];
+    // origin = json['origin'];
+    // location = json['location'];
     image = json['image'];
     episode = json['episode'];
     url = json['url'];
     created = json['created'];
-  }
+
+  //   id = json['id'] as int;
+  //   name = json['name'] as String;
+  //   status = json['status'] as String;
+  //   species = json['species'] as String;
+  //   type = json['type'] ?? ''; // Default to empty string if null
+  //   gender = json['gender'] as String;
+  //   origin = json['origin'] as Map<String, dynamic>;
+  //   location = json['location'] as Map<String, dynamic>;
+  //   image = json['image'] as String;
+  //   episode = (json['episode'] as List<dynamic>).map((e) => e.toString()).toList();
+  //   url = json['url'] as String;
+  //   created = json['created'] as String;
+   }
 }
