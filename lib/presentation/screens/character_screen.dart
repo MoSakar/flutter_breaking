@@ -10,7 +10,7 @@ class CharacterScreen extends StatefulWidget {
 }
 
 class _CharacterScreenState extends State<CharacterScreen> {
-  List<Character>? allCharacters;
+  late List<Character> allCharacters;
   @override
   void initState() {
     // TODO: implement initState
@@ -55,7 +55,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
     physics: NeverScrollableScrollPhysics(),
     padding: EdgeInsets.zero,
     itemBuilder: (ctx, index){
-      return CharacterItem(character: allCharacters![index],);
+      return CharacterItem(character: allCharacters[index]   ,);
     },);
   }
 

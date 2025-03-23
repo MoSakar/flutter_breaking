@@ -8,9 +8,17 @@ final CharacterWebServices characterWebServices ;
   Future <List<Character>> getCharacters() async{
     final characters = await characterWebServices.getCharacters();
     print('1111111111111111111111111111111111111111111111111111111111111111');
-    //print(characters.toString());
-    print(characters.map((character)=>Character.fromJson(character as Map<String,dynamic>)).toList());
-    return characters.map((character)=>Character.fromJson(character as Map<String,dynamic>)).toList();
+     print(characters.toString());
+    // print(characters.map((character) => Character.fromJson(character)).toList());
+    // return characters.map((character) => Character.fromJson(character)).toList();
+
+      if (characters.isNotEmpty) { // Ensure it's not empty before mapping
+      print(characters.map((character) => Character.fromJson(character)).toList()); 
+    return characters.map((character) => Character.fromJson(character)).toList();
+  } else {
+    print("Error: No characters found in API response.");
+    return [];
+  }
 
   }
   

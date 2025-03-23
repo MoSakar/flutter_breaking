@@ -10,7 +10,7 @@ class Character {
   // late Map<String, dynamic> origin;
   // late Map<String, dynamic> location;
   late String image;
-  late List<String> episode;
+  late List<dynamic> episode;
   late String url;
   late String created;
   // Character({
