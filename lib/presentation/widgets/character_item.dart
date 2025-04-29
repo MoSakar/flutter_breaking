@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breaking/constants/colors.dart';
+import 'package:flutter_breaking/constants/strings.dart';
 import 'package:flutter_breaking/data/models/character.dart';
 
 class CharacterItem extends StatelessWidget {
@@ -24,32 +25,42 @@ class CharacterItem extends StatelessWidget {
           ),
         ],
       ),
-      child: GridTile(
-        footer: Container(
-          width: double.infinity,
-          alignment: Alignment.bottomCenter,
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          color:Colors.redAccent,
-
-          child: Text(
-            character.name,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: MyColor.White,
-              fontSize: 16,
-              height: 1.3,
-              fontWeight: FontWeight.bold,
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, characterDetailsScreenRoute,
+              arguments: character);
+          // Navigator.push(context, MaterialPageRoute(builder: (context) => CharacterDetail(character: character,)));
+        },
+        child: Hero(
+          tag: character.id,
+          child: GridTile(
+            footer: Container(
+              width: double.infinity,
+              alignment: Alignment.bottomCenter,
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              color:Colors.redAccent,
+          
+              child: Text(
+                character.name,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: MyColor.White,
+                  fontSize: 16,
+                  height: 1.3,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
+            child: Container(
+              color: MyColor.Gray,
+              child:character.image.isNotEmpty?
+               FadeInImage.assetNetwork(placeholder:'assets/images/loadingIcon.gif' ,
+               image: character.image ,fit: BoxFit.cover,)
+              :Image.network('https://i.sstatic.net/y9DpT.jpg',fit: BoxFit.cover,),
+            ),
+            
           ),
         ),
-        child: Container(
-          color: MyColor.Gray,
-          child:character.image.isNotEmpty?
-           FadeInImage.assetNetwork(placeholder:'assets/images/loadingIcon.gif' ,
-           image: character.image ,fit: BoxFit.cover,)
-          :Image.network('https://i.sstatic.net/y9DpT.jpg',fit: BoxFit.cover,),
-        ),
-        
       ),
     );
   }

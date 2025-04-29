@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breaking/business_logic/cubit/character_cubit.dart';
 import 'package:flutter_breaking/constants/strings.dart';
+import 'package:flutter_breaking/data/models/character.dart';
 import 'package:flutter_breaking/data/repository/character_repository.dart';
 import 'package:flutter_breaking/data/web_services/characters_webservices.dart';
+import 'package:flutter_breaking/presentation/screens/character_details_screen.dart';
 import 'package:flutter_breaking/presentation/screens/character_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,6 +24,12 @@ class AppRoute {
           child:CharacterScreen(),
         )
         );
+        case characterDetailsScreenRoute:
+        final character = settings.arguments as Character;
+        return MaterialPageRoute(builder: (_) => CharacterDetail(character: character,),
+        );
+       
+    
     }
   }
 }
