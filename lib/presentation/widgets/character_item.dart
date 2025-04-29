@@ -29,7 +29,7 @@ class CharacterItem extends StatelessWidget {
           width: double.infinity,
           alignment: Alignment.bottomCenter,
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          color: Colors.black54,
+          color:Colors.redAccent,
 
           child: Text(
             character.name,
@@ -45,8 +45,8 @@ class CharacterItem extends StatelessWidget {
         child: Container(
           color: MyColor.Gray,
           child:character.image.isNotEmpty?
-           FadeInImage.assetNetwork(placeholder:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.downgraf.com%2Finspiration%2Fgif-loading-bar%2F&psig=AOvVaw1RP07MSxjh-Pq_uLYdnw5K&ust=1742804546579000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCRs4Pjn4wDFQAAAAAdAAAAABAQ' 
-           ,image: character.image ,fit: BoxFit.cover,)
+           FadeInImage.assetNetwork(placeholder:'assets/images/loadingIcon.gif' ,
+           image: character.image ,fit: BoxFit.cover,)
           :Image.network('https://i.sstatic.net/y9DpT.jpg',fit: BoxFit.cover,),
         ),
         

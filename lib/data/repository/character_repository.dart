@@ -14,7 +14,8 @@ final CharacterWebServices characterWebServices ;
 
       if (characters.isNotEmpty) { // Ensure it's not empty before mapping
       print(characters.map((character) => Character.fromJson(character)).toList()); 
-    return characters.map((character) => Character.fromJson(character)).toList();
+    var lst =characters.map((character) => Character.fromJson(character)).toList();
+    return lst;
   } else {
     print("Error: No characters found in API response.");
     return [];
